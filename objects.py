@@ -14,6 +14,18 @@ class Talaba:
     def get_update(self):
         self.bosqich += 1
 
+    def get_name(self):
+        return self.ism
+
+    def get_lastname(self):
+        return self.familiya
+
+    def get_fullname(self):
+        return f"{self.ism} {self.familiya}"
+
+    def get_age(self,yil):
+        return yil-self.tyil
+
 
 class Fan:
     def __init__(self, nomi):
@@ -25,18 +37,27 @@ class Fan:
         self.talabalar.append(talaba)
         self.talabalar_soni += 1
 
-    def get_stdents(self):
-        return [talaba1.get_info() for talaba in self.talabalar]
+    def get_name(self):
+        return self.nomi
+
+    def get_students(self):
+        return [x.get_info for x in self.talabalar]
+
+    def get_students_num(self):
+        return self.talabalar_soni
+
+    # def get_stdents(self):
+# return [talaba1.get_info() for talaba in self.talabalar]
 
 
-matematika = Fan("Oliy matematika")
-talaba1 = Talaba("Alijon", "Valiyev", 2000)
-talaba2 = Talaba("Hasan", "Alimov", 2001)
-talaba3 = Talaba("Akrom", "Boriyev", 2002)
-
-matematika.add_student(talaba1)
-matematika.add_student(talaba2)
-matematika.add_student(talaba3)
+# matematika = Fan("Oliy matematika")
+# talaba1 = Talaba("Alijon", "Valiyev", 2000)
+# talaba2 = Talaba("Hasan", "Alimov", 2001)
+# talaba3 = Talaba("Akrom", "Boriyev", 2002)
+#
+# matematika.add_student(talaba1)
+# matematika.add_student(talaba2)
+# matematika.add_student(talaba3)
 
 mat_talabalar = matematika.get_stdents()
 print(mat_talabalar)
