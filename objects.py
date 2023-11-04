@@ -7,3 +7,7 @@ class Talaba:
 
     def get_info(self):
         return f"{self.ism} {self.familiya}. {self.bosqich} bosqich talabasi"
+
+
+talaba1 = Talaba("Alijon", "Valiyev", 2000)
+print(talaba1.get_info())
